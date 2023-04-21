@@ -1,7 +1,7 @@
 import random
 
 # deck of cards / player dealer hand 
-deck = [2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10,2,3,4,5,6,7,8,9,10, 'J', 'Q','K','A','J', 'Q','K','A','J', 'Q','K','A','J', 'Q','K','A']
+deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A', 'J', 'Q', 'K', 'A', 'J', 'Q','K', 'A', 'J', 'Q', 'K', 'A']
 playerHand = []
 dealerHand = []
 
@@ -15,7 +15,7 @@ def total(turn):
     total = 0
     face = ['J', 'K', 'Q']
     for card in turn:
-        if card in rane(1, 11):
+        if card in range(1, 11):
             total += card
         elif card in face:
             total += 1
@@ -26,6 +26,13 @@ def total(turn):
                 total += 11
     return total
 # check for winner
+def revealDealerHand():
+    if len(dealerHand) == 2:
+        return dealerHand[0]
+    elif len(dealerHand) > 2:
+        return dealerHand[0], dealerHand[1]
 
 # game loop 
-
+for _ in range(2):
+    dealCard(dealerHand)
+    dealCard(playerHand)
