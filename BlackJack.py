@@ -11,7 +11,20 @@ def dealCard(turn):
     turn.append(card)
     deck.remove(card)
 # calculate the total of each hand 
-
+def total(turn):
+    total = 0
+    face = ['J', 'K', 'Q']
+    for card in turn:
+        if card in rane(1, 11):
+            total += card
+        elif card in face:
+            total += 1
+        else:
+            if total > 11:
+                total += 1
+            else:
+                total += 11
+    return total
 # check for winner
 
 # game loop 
