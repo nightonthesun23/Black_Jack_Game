@@ -62,10 +62,10 @@ if total(playerHand) == 21:
     print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
     print("Blackjack! You win!")
 elif total(dealerHand) == 21:
-    print(f"\nYou have {playerHand} for a total of {total(playerHand)}")
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
     print("Blackjack! Dealer wins!")
 elif total(playerHand) > 21:
-    print(f"\nYou have {playerHand} for a total of {total(playerHand)}")
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")")
     print("You bust! Dealer wins!")
 elif total(dealerHand) > 21:
     print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
