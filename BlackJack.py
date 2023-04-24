@@ -21,7 +21,7 @@ def total(turn):
         if card in range(1, 11):
             total += card
         elif card in face:
-            total += 1
+            total += 10
         else:
             if total > 11:
                 total += 1
@@ -49,6 +49,35 @@ while playerIn or dealerIn:
         dealerIn = False
     else:
         dealCard(dealerHand)
+    if stayOrHit == '1':
+        playerIn = False
+    else:
+        dealCard(playerHand)
+    if total(playerHand) >= 21:
+        break
+    elif total(dealerHand) >= 21:
+        break
+
+if total(playerHand) == 21:
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
+    print("Blackjack! You win!")
+elif total(dealerHand) == 21:
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)}")
+    print("Blackjack! Dealer wins!")
+elif total(playerHand) > 21:
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)}")
+    print("You bust! Dealer wins!")
+elif total(dealerHand) > 21:
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
+    print("Dealer busts! You win!")
+elif 21 - total(dealerHand) < 21 - total(playerHand):
+    print(f"\nYou have {playerHand} for a total of {total(playerHand)} and the dealer has {dealerHand} for a total of {total(dealerHand)}")
+    print("Dealer wins!")
+elif 21 - total(dealerHand) > 21 - total(playerHand):
+    print("You Win1")
+
+
+         
     
 
 
